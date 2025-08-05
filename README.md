@@ -37,7 +37,7 @@ Minutes](https://bit.ly/py-env).
 To install redis-py, simply:
 
 ``` bash
-$ pip install redis
+$ pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' redis
 ```
 
 or from source:
@@ -441,7 +441,7 @@ Hiredis is available on PyPI, and can be installed via pip just like
 redis-py.
 
 ``` bash
-$ pip install hiredis
+$ pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' hiredis
 ```
 
 ### Response Callbacks
