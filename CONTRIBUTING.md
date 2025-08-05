@@ -37,7 +37,7 @@ Here's how to get started with your code contribution:
 
         a.  python -m venv .venv
         b.  source .venv/bin/activate
-        c.  pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' -r dev_requirements.txt
+        c.  pip install -r dev_requirements.txt
 
 4.  If you need a development environment, run `invoke devenv`
 5.  While developing, make sure the tests pass by running `invoke tests`

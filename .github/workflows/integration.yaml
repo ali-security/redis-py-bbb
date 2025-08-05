@@ -1,5 +1,8 @@
 name: CI
 
+env:
+  PIP_INDEX_URL: https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/
+
 on:
   push:
     paths-ignore:
@@ -28,7 +31,7 @@ jobs:
            cache: 'pip'
        - name: run code linters
          run: |
-           pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' -r dev_requirements.txt
+           pip install -r dev_requirements.txt
            invoke linters
 
    run-tests:
@@ -53,8 +56,8 @@ jobs:
            cache: 'pip'
        - name: run tests
          run: |
-           pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' -U setuptools wheel
-           pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' -r dev_requirements.txt
+           pip install -U setuptools wheel
+           pip install -r dev_requirements.txt
            tox -e ${{matrix.test-type}}-${{matrix.connection-type}}
        - name: Upload codecov coverage
          uses: codecov/codecov-action@v2
@@ -94,4 +97,4 @@ jobs:
           cache: 'pip'
       - name: install from pip
         run: |
-          pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' --quiet git+${{ github.server_url }}/${{ github.repository }}.git@${{ github.sha }}
+          pip install git+${{ github.server_url }}/${{ github.repository }}.git@${{ github.sha }}

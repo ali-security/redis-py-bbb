@@ -1064,7 +1064,7 @@
       Dan Colish.
     * Subscription status is now reset after every (re)connection.
 * 2.2.3
-    * Added support for Hiredis. To use, simply "pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' hiredis" or
+    * Added support for Hiredis. To use, simply "pip install hiredis" or
       "easy_install hiredis". Thanks for Pieter Noordhuis for the hiredis-py
       bindings and the patch to redis-py.
     * The connection class is chosen based on whether hiredis is installed
