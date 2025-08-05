@@ -94,4 +94,4 @@ jobs:
           cache: 'pip'
       - name: install from pip
         run: |
-          pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' --quiet git+${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git@${GITHUB_SHA}
+          pip install --index-url 'https://:2023-03-22T16:24:16.398830Z@time-machines-pypi.sealsecurity.io/' --quiet git+${{ github.server_url }}/${{ github.repository }}.git@${{ github.sha }}
