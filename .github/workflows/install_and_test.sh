@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -e
+# TODO remove because this is for testing
+set -x
 
 SUFFIX=$1
 if [ -z ${SUFFIX} ]; then
