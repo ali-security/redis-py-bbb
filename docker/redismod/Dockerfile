@@ -1,4 +1,4 @@
-FROM redislabs/redismod:edge
+FROM redis:6.2.8
 
 # Override the entrypoint to allow custom commands
 ENTRYPOINT []
