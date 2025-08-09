@@ -927,12 +927,7 @@ class Connection:
                 f"Error while reading from {self.host}:{self.port}: {e.args}"
             )
 
-    async def read_response(
-            self,
-            disable_decoding: bool = False,
-            *,
-            disconnect_on_error: bool = True,
-        ):
+    async def read_response(self, disable_decoding: bool = False):
         """Read the response from a previously sent command"""
         try:
             async with self._lock:
@@ -946,18 +941,15 @@ class Connection:
                         disable_decoding=disable_decoding
                     )
         except asyncio.TimeoutError:
-            if disconnect_on_error:
-                await self.disconnect()
+            await self.disconnect()
             raise TimeoutError(f"Timeout reading from {self.host}:{self.port}")
         except OSError as e:
-            if disconnect_on_error:
-                await self.disconnect()
+            await self.disconnect()
             raise ConnectionError(
                 f"Error while reading from {self.host}:{self.port} : {e.args}"
             )
         except BaseException:
-            if disconnect_on_error:
-                await self.disconnect()
+            await self.disconnect()
             raise
 
         if self.health_check_interval:
