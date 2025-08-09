@@ -35,9 +35,9 @@ Here's how to get started with your code contribution:
 3.
     *Create a virtualenv and install the development dependencies from the dev_requirements.txt file:*
 
-        a.  python -m venv .venv
-        b.  source .venv/bin/activate
-        c.  pip install -r dev_requirements.txt
+python -m venv .venv
+source .venv/bin/activate
+pip install -r dev_requirements.txt
 
 4.  If you need a development environment, run `invoke devenv`
 5.  While developing, make sure the tests pass by running `invoke tests`

@@ -1,5 +1,6 @@
 import contextlib
 import multiprocessing
+multiprocessing.set_start_method("fork") # https://github.com/redis/redis-py/issues/1931 (macos)
 
 import pytest
 

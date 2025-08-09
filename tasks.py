@@ -14,9 +14,10 @@ def devenv(c):
     specified in the tox.ini file.
     """
     clean(c)
-    cmd = "tox -e devenv"
+    cmd = "tox -e x"
     for d in dockers:
         cmd += f" --docker-dont-stop={d}"
+    print(cmd)
     run(cmd)
 
 

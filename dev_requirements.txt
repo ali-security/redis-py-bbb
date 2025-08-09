@@ -8,10 +8,12 @@ pytest==6.2.5
 pytest-timeout==2.0.1
 pytest-asyncio>=0.16.0
 tox==3.24.4
-tox-docker==3.1.0
+tox-docker==4.1.0
 invoke==1.6.0
 pytest-cov>=3.0.0
 vulture>=2.3.0
 ujson>=4.2.0
 wheel>=0.30.0
 uvloop
+async-timeout==5.0.1
+requests=== 2.31.0 # https://github.com/ansible-collections/community.docker/issues/868#issuecomment-2124979976
